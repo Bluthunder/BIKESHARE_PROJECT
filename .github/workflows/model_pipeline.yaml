@@ -55,7 +55,10 @@ jobs:
           path: ~/.cache/pip
 
       - name: Train Model
-        run: python bikeshare_model/train_pipeline/train.py
+        run: |
+          python bikeshare_model/train_pipeline.py
+          python bikeshare_model/predict.py
+
 
       - name: Save Trained Model
         uses: actions/upload-artifact@v4
