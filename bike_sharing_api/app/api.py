@@ -49,6 +49,9 @@ example_input = {
             "windspeed": 19.0012,
             "yr": 2012,
             "mnth": "November",
+            # "casual": 23,
+            # "registered": 167
+
         }
     ]
 }

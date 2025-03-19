@@ -4,15 +4,16 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y wget
 
+COPY . /app
+
 COPY requirements.txt ./
+
+COPY bikeshare_model-0.0.1-py3-none-any.whl /app/
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN wget "https://github.com/Bluthunder/bikesharemodel/releases/download/v0.1.0/bikeshare_rental_model-0.1.0-py3-none-any.whl" && \
-    pip install bikeshare_rental_model-0.1.0-py3-none-any.whl
+RUN pip install --no-cache-dir bikeshare_model-0.0.1-py3-none-any.whl
 
-COPY . .
+EXPOSE 8001
 
-EXPOSE 7070
-
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7070"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001"]
