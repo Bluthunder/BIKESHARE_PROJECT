@@ -3,9 +3,8 @@ name: Model Training & Deployment Pipeline
 on:
   push:
     branches:
-      - main  # Run workflow on every push to 'main'
-
-  workflow_dispatch:
+      - main 
+  workflow_dispatch:  
 
 jobs:
 
@@ -26,7 +25,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
@@ -41,7 +40,7 @@ jobs:
 
   train_model:
     name: Train Model
-    needs: setup  # Use cached dependencies
+    needs: setup
     runs-on: ubuntu-latest
 
     steps:
@@ -54,17 +53,19 @@ jobs:
           name: python-dependencies
           path: ~/.cache/pip
 
+      - name: Install Dependencies (Ensure Installation)
+        run: pip install -r requirements/requirements.txt
+
       - name: Train Model
         run: |
           python bikeshare_model/train_pipeline.py
           python bikeshare_model/predict.py
 
-
       - name: Save Trained Model
         uses: actions/upload-artifact@v4
         with:
           name: trained-model
-          path: bikeshare_model/trained_models/
+          path: trained_models/
 
   unit_tests:
     name: Run Unit Tests
@@ -81,8 +82,8 @@ jobs:
           name: python-dependencies
           path: ~/.cache/pip
 
-      - name: Install Pytest
-        run: pip install pytest
+      - name: Install Dependencies
+        run: pip install -r requirements/test_requirements.txt
 
       - name: Run Unit Tests
         run: pytest tests/ --junitxml=reports/unit-test-results.xml
@@ -107,6 +108,9 @@ jobs:
         with:
           name: python-dependencies
           path: ~/.cache/pip
+
+      - name: Install Dependencies
+        run: pip install -r requirements/requirements.txt
 
       - name: Build Package (.whl)
         run: |
@@ -140,6 +144,9 @@ jobs:
         with:
           name: model-package
           path: .
+
+      - name: Install Dependencies
+        run: pip install -r bike_sharing_api/requirements.txt
 
       - name: Log in to DockerHub
         run: echo "${{ secrets.DOCKER_ACCESS_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
