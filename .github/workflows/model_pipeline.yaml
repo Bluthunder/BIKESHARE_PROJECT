@@ -121,13 +121,13 @@ jobs:
       - name: Build Package (.whl)
         run: |
           python setup.py sdist bdist_wheel
-          mv dist/*.whl bikeshare_model-0.0.1-py3-none-any.whl
+          mv dist/*.whl bike_sharing_api/bikeshare_model-0.0.1-py3-none-any.whl
 
       - name: Upload Model Package
         uses: actions/upload-artifact@v4
         with:
           name: model-package
-          path: bikeshare_model-0.0.1-py3-none-any.whl
+          path: bike_sharing_api/bikeshare_model-0.0.1-py3-none-any.whl
 
 
   dockerize_api:
@@ -153,7 +153,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: model-package
-          path: .
+          path: bike_sharing_api/
 
       - name: Install Dependencies
         run: pip install -r bike_sharing_api/requirements.txt
