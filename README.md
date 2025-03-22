@@ -62,10 +62,10 @@ API will be available at 👉 http://localhost:8001
 
 ## 🏗️ GitHub Actions Workflow
 The CI/CD pipeline automates the following:
-✔️ Setup & Dependency Installation
-✔️ Model Training & Artifact Upload
-✔️ Unit Testing
-✔️ Building & Pushing Docker Image to docker hub
+- ✔️ Setup & Dependency Installation
+- ✔️ Model Training & Artifact Upload
+- ✔️ Unit Testing
+- ✔️ Building & Pushing Docker Image to docker hub
 
 ## 📜 License
 - 📄 This project is licensed under the MIT License.
