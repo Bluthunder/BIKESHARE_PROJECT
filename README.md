@@ -22,11 +22,11 @@ A **Machine Learning model training and deployment pipeline** for a **Bike Share
 ```
 
 
-##⚡ Features
-✅ Automated Model Training (CatBoost, Sklearn, etc.)
-✅ Unit Testing & CI/CD with GitHub Actions
-✅ API Deployment with FastAPI & Docker
-✅ Model Packaging into a .whl file
+## ⚡ Features
+- ✅ Automated Model Training (CatBoost, Sklearn, etc.)
+- ✅ Unit Testing & CI/CD with GitHub Actions
+- ✅ API Deployment with FastAPI & Docker
+- ✅ Model Packaging into a .whl file
 
 
 ## 🚀 Installation & Usage
@@ -60,20 +60,20 @@ docker run -p 8000:8000 bikesharing-api
 
 API will be available at 👉 http://localhost:8001
 
-##🏗️ GitHub Actions Workflow
+## 🏗️ GitHub Actions Workflow
 The CI/CD pipeline automates the following:
 ✔️ Setup & Dependency Installation
 ✔️ Model Training & Artifact Upload
 ✔️ Unit Testing
 ✔️ Building & Pushing Docker Image to docker hub
 
-##📜 License
-📄 This project is licensed under the MIT License.
+## 📜 License
+- 📄 This project is licensed under the MIT License.
 
-##🤝 Contributing
-🙌 PRs & Issues are welcome! Follow the contributing guidelines.
+## 🤝 Contributing
+- 🙌 PRs & Issues are welcome! Follow the contributing guidelines.
 
-##📬 Contact
-📧 Your Name – Kaushik T D Roy
-🐦 Twitter – @kaushiktd
-🔗 LinkedIn – https://www.linkedin.com/in/kaushiktd/
+## 📬 Contact
+- 📧 Your Name – Kaushik T D Roy
+- 🐦 Twitter – @kaushiktd
+- 🔗 LinkedIn – https://www.linkedin.com/in/kaushiktd/
