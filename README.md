@@ -6,7 +6,7 @@
 
 A **Machine Learning model training and deployment pipeline** for a **Bike Share Rental System**. This project automates the entire ML workflow, from training to API deployment using **GitHub Actions, FastAPI, Docker, and Pytest**.
 
-
+---
 
 ## 🏗️ Project Structure  
 ```bash
@@ -19,22 +19,23 @@ A **Machine Learning model training and deployment pipeline** for a **Bike Share
 │-- dist/                                   # Built Packages  
 │-- setup.py                                # Package Setup  
 │-- README.md                               # This File  
+```
 
 
-⚡ Features
+##⚡ Features
 ✅ Automated Model Training (CatBoost, Sklearn, etc.)
 ✅ Unit Testing & CI/CD with GitHub Actions
 ✅ API Deployment with FastAPI & Docker
 ✅ Model Packaging into a .whl file
 
 
-🚀 Installation & Usage
+## 🚀 Installation & Usage
 
 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/your-repo.git
-```
 cd BIKESHARE_PROJECT
+```
 
 2️⃣ Install Dependencies
 ```bash
@@ -59,20 +60,20 @@ docker run -p 8000:8000 bikesharing-api
 
 API will be available at 👉 http://localhost:8001
 
-🏗️ GitHub Actions Workflow
+##🏗️ GitHub Actions Workflow
 The CI/CD pipeline automates the following:
 ✔️ Setup & Dependency Installation
 ✔️ Model Training & Artifact Upload
 ✔️ Unit Testing
-✔️ Building & Pushing Docker Image
+✔️ Building & Pushing Docker Image to docker hub
 
-📜 License
+##📜 License
 📄 This project is licensed under the MIT License.
 
-🤝 Contributing
+##🤝 Contributing
 🙌 PRs & Issues are welcome! Follow the contributing guidelines.
 
-📬 Contact
+##📬 Contact
 📧 Your Name – Kaushik T D Roy
 🐦 Twitter – @kaushiktd
 🔗 LinkedIn – https://www.linkedin.com/in/kaushiktd/
